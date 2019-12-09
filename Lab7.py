@@ -4,7 +4,7 @@
 Created on day 12/0/2019
 Course: CS 2302 - Data Structures
 Author: Brian Perez
-Assignment: Lab #6
+Assignment: Lab #7
 Instructor: Diego Aguirre 
 D.O.L.M.: 12/09/19 
 """
