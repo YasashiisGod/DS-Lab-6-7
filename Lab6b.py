@@ -156,27 +156,6 @@ def compute_indegree_every_vertex(graph):
     return in_degrees
 
 
-        
-
-
-    '''
-
-    ###################
-    def out_d(self,v): 
-        return len(self.al[v])
-    def num_iv(self): 
-        c = 0 
-        for v in range (len(self.al)):
-            if self.in_d == 0 and self.out_d(v) ==0: 
-                c += 1 
-        return c
-        
-    
-    '''    
-
-
-
-
 myGraph = GraphAL(5, weighted=False, directed=True)    
 myGraph.insert_edge(0, 1, weight=1)
 myGraph.insert_edge(0, 2, weight=1)
