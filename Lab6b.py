@@ -13,6 +13,8 @@ class Edge:
     def __init__(self, dest, weight=1):
         self.dest = dest
         self.weight = weight
+        
+    
 
 #Class to represent a graph 
 class GraphAL:
@@ -80,15 +82,39 @@ class GraphAL:
             print(']', end=' ')
         print(']')
                 
+    def in_degree_single_vertex(self, v): 
+        count = 0
+        for l in self.al:
+            for e in l: 
+                if e.dest  == v: 
+                    count += 1 
+        return count
+    
+    def out_degree_vertex(self,v): 
+        return len(self.al[v])
+    
+    def number_isolated_vertices(self): 
+        c = 0 
+        for v in range (len(self.al)):
+            if self.in_d == 0 and self.out_d(v) ==0: 
+                c += 1 
+        return c
+    
+    
+    def get_adj_vertices(self, v): 
+        #for x in self.al:
+        return
+        
+                
         
 class Queue:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
+    def is_empty(self):
         return self.items == []
 
-    def enqueue(self, item):
+    def put(self, item):
         self.items.insert(0,item)
 
     def dequeue(self):
@@ -97,8 +123,11 @@ class Queue:
     def size(self):
         return len(self.items)
     
+
+    
 def topological_sort(graph): 
-    all_in_degrees = compute_indegree_every_vertex(graph) 
+    all_in_degrees = compute_indegree_every_vertex(graph)
+    print(all_in_degrees)
     sort_result = [] 
     q = Queue() 
     
@@ -107,7 +136,7 @@ def topological_sort(graph):
             q.put(i) # enqueue 
             
     while not q.is_empty(): 
-        u = q.put() # dequeue 
+        u = q.dequeue() # dequeue 
         sort_result.append(u) 
         for adj_vertex in graph.get_adj_vertices(u): 
             all_in_degrees[adj_vertex] -= 1 
@@ -121,20 +150,45 @@ def topological_sort(graph):
     return sort_result 
 
 def compute_indegree_every_vertex(graph):
-    
-    return 
+    in_degrees = []
+    for y in range(len(graph.al)):
+            in_degrees.append(graph.in_degree_single_vertex(y))
+    return in_degrees
 
-def get_adj_vertices(vertex): 
-    return
+
+        
+
+
+    '''
+
+    ###################
+    def out_d(self,v): 
+        return len(self.al[v])
+    def num_iv(self): 
+        c = 0 
+        for v in range (len(self.al)):
+            if self.in_d == 0 and self.out_d(v) ==0: 
+                c += 1 
+        return c
+        
+    
+    '''    
+
+
+
 
 myGraph = GraphAL(5, weighted=False, directed=True)    
 myGraph.insert_edge(0, 1, weight=1)
 myGraph.insert_edge(0, 2, weight=1)
 myGraph.insert_edge(1, 2, weight=1)
-myGraph.insert_edge(2, 1, weight=1)
+myGraph.insert_edge(2, 3, weight=1)
+myGraph.insert_edge(4, 3, weight=1)
+myGraph.insert_edge(0, 4, weight=1)
 
 
 
-topological_sort(myGraph)
+
+
+#topological_sort(myGraph)
 
     
