@@ -156,6 +156,9 @@ def compute_indegree_every_vertex(graph):
     return in_degrees
 
 
+
+
+
 myGraph = GraphAL(5, weighted=False, directed=True)    
 myGraph.insert_edge(0, 1, weight=1)
 myGraph.insert_edge(0, 2, weight=1)
