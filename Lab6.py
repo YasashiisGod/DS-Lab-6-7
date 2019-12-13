@@ -37,12 +37,12 @@ class Graph:
 
     def KruskalMST(self): 
   
-        result =[] 
+        result = [] 
   
         i = 0 
         e = 0 
 
-        self.graph =  sorted(self.graph,key= lambda item: item[2]) 
+        self.graph =  sorted(self.graph, key= lambda item: item[2]) 
   
         parent = [] ; priority = [] 
   
@@ -65,7 +65,7 @@ class Graph:
         print ("Following are the edges in the constructed MST")  
         for u,v,weight  in result: 
 
-            print ("%d -- %d == %d" % (u,v,weight))
+            print (u,"-",v,"=",weight)
             
 def test():
 
